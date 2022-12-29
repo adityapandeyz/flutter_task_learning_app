@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_task_learning_app/utils/colors.dart';
+import 'package:flutter_task_learning_app/widgets/rectangle_buttons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -70,112 +71,103 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 4,
+                    GridView.count(
                       shrinkWrap: true,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: MediaQuery.of(context).orientation ==
-                                Orientation.landscape
-                            ? 3
-                            : 2,
-                        crossAxisSpacing: 8,
-                        mainAxisSpacing: 8,
-                        childAspectRatio: (2 / 1),
-                      ),
-                      itemBuilder: (
-                        context,
-                        index,
-                      ) {
-                        return GestureDetector(
-                          child: Container(
-                            color: Colors.transparent,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  width: 30,
-                                  child: SvgPicture.asset(
-                                    'assets/svg_icons/forum_black_24dp 1.svg',
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                Text('Programs'),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    )
+                      primary: false,
+                      childAspectRatio: 8.0 / 9.0,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      crossAxisCount: 2,
+                      children: const <Widget>[
+                        RectangleButton(
+                          svgLink: 'assets/svg_icons/programs.svg',
+                          title: 'Programs',
+                        ),
+                        RectangleButton(
+                          svgLink: 'assets/svg_icons/get_help.svg',
+                          title: 'Get Help',
+                        ),
+                        RectangleButton(
+                          svgLink: 'assets/svg_icons/learn.svg',
+                          title: 'Learn',
+                        ),
+                        RectangleButton(
+                          svgLink: 'assets/svg_icons/dd_tracker.svg',
+                          title: 'DD Tracker',
+                        )
+                      ],
+                    ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Row(
-              children: [
-                Text(
-                  'Programs for you',
-                  style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.headline4,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-                Text(
-                  'View all',
-                  style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.headline4,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            GridView.builder(
-              itemCount: 4,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount:
-                    MediaQuery.of(context).orientation == Orientation.landscape
-                        ? 3
-                        : 2,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
-                childAspectRatio: (2 / 1),
-              ),
-              itemBuilder: (
-                context,
-                index,
-              ) {
-                return GestureDetector(
-                  child: Container(
-                    color: Colors.transparent,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          width: 30,
-                          child: SvgPicture.asset(
-                            'assets/svg_icons/forum_black_24dp 1.svg',
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Text('Programs'),
-                      ],
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0, right: 18),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Programs for you',
+                    style: GoogleFonts.lora(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                );
-              },
-            )
+                  Row(
+                    children: [
+                      Text(
+                        'View all',
+                        style: GoogleFonts.inter(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 30,
+                        child: SvgPicture.asset(
+                          'assets/svg_icons/arrow_forward.svg',
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            GridView.count(
+              shrinkWrap: true,
+              primary: false,
+              childAspectRatio: 8.0 / 9.0,
+              padding: const EdgeInsets.all(18),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: const <Widget>[
+                RectangleButton(
+                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
+                  title: 'Programs',
+                ),
+                RectangleButton(
+                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
+                  title: 'Programs',
+                ),
+                RectangleButton(
+                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
+                  title: 'Programs',
+                ),
+                RectangleButton(
+                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
+                  title: 'Programs',
+                )
+              ],
+            ),
           ],
         ),
       ),
