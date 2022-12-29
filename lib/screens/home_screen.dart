@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_task_learning_app/utils/colors.dart';
+import 'package:flutter_task_learning_app/widgets/course_square.dart';
 import 'package:flutter_task_learning_app/widgets/rectangle_buttons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -150,21 +151,19 @@ class HomeScreen extends StatelessWidget {
               mainAxisSpacing: 10,
               crossAxisCount: 2,
               children: const <Widget>[
-                RectangleButton(
-                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
-                  title: 'Programs',
+                CourseSquare(
+                  imgLink:
+                      'https://cdn.dribbble.com/users/1099127/screenshots/6466583/mommom.jpg',
+                  title: 'A complete guide for your new born baby',
+                  category: 'Lifestyle',
+                  lessonCount: 16,
                 ),
-                RectangleButton(
-                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
-                  title: 'Programs',
-                ),
-                RectangleButton(
-                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
-                  title: 'Programs',
-                ),
-                RectangleButton(
-                  svgLink: 'assets/svg_icons/forum_black_24dp 1.svg',
-                  title: 'Programs',
+                CourseSquare(
+                  imgLink:
+                      'https://cdn.dribbble.com/users/1099127/screenshots/6466583/mommom.jpg',
+                  title: 'Understanding of human behaviour',
+                  category: 'Working Parents',
+                  lessonCount: 12,
                 )
               ],
             ),
